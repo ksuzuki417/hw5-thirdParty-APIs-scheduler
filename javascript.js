@@ -14,7 +14,7 @@ $(document).ready(function(){
         var scheduler = $("<div>");
         var timeDiv = $("<div>");
         var notesDiv = $("<textarea>");
-        var buttonEl = $("<button>");
+        var buttonEl = $("<button>").text("SAVE");
         var iconEl = $("<i>");
 
         scheduler.attr("data-hour", timeBlocks[i]);
