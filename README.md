@@ -7,5 +7,5 @@ the items you saved will stay after you refresh the page.
 
 https://ksuzuki417.github.io/hw5-thirdParty-APIs-scheduler/
 
-<img src="hw5-screenShot" alt="Day Scheduler Screenshot">
+<img src="hw5-screenShot.png" alt="Day Scheduler Screenshot">
 
