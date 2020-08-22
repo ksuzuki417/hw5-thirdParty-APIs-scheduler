@@ -22,7 +22,7 @@ $(document).ready(function(){
         //adding class attribute as row.
         scheduler.attr("class", "row");
         timeDiv.attr("class", "hour col-1");
-        notesDiv.attr("class", "schedule col-9");
+        notesDiv.attr("class", "description col-9");
         buttonEl.attr("class", "saveBtn")
 
         $(".container").append(scheduler)
@@ -32,17 +32,28 @@ $(document).ready(function(){
 
         timeDiv.text(timeBlocks[i])
     }
+
     var currentTime = moment().hour();
     //color code based on time (past, present, future)
-    if(militaryHour[i] == currentTime) {
-        notesDiv.addClass("present");
-    }
-    else if (militaryHour[i] > currentTime) {
-        notesDiv.addClass("future");
-    } else{
-        notesDiv.addClass("past");
-    }
-    console.log(moment().hour())
+    //applying "if" function to each textarea.
+    $("textarea").each(function(){
+        // if id of textarea is equal to currentTime, then it is present.
+        if ($(this).attr("id") == currentTime) {
+            $(this).addClass("present");
+        // if id of textarea is grater than currenTime, then it is future.
+        } else if ($(this).attr("id") > currentTime)  {
+            $(this).addClass("future");
+        // if id of textarea is other than the above, then it is past.
+        } else {
+            $(this).addClass("past");
+        }
+    })
+    
+
+    buttonEl.click(function() {
+        $("#8").val(localStorage.getItem("8"));
+        console.log(localStorage);
+    })
 })
 
 //place text "SAVE" vertially on save button.
